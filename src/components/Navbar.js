@@ -4,17 +4,17 @@ import styles from './Navbar.module.css'
 
 const Navbar = () => {
   return (
-    <nav>
-        <NavLink to='/'>
+    <nav className={styles.navbar}>
+        <NavLink to='/' className={styles.brand}>
             Photo <span>Grapys</span>
         </NavLink>
-        <ul>
+        <ul className={styles.link_list}>
             <li>
-                <NavLink to='/'>
+                <NavLink to='/' className={({isActive}) => (isActive) ? styles.active : ''}>
                 Home 
                 </NavLink>
-                <NavLink to='/about'>
-                About 
+                <NavLink to='/about' className={({isActive}) => (isActive) ? styles.active : ''}>
+                Sobre 
                 </NavLink>
             </li>
         </ul>
