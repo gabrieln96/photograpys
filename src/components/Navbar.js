@@ -16,7 +16,7 @@ const Navbar = () => {
             </li>
             <li>
                 <NavLink to='/login' className={({isActive}) => (isActive) ? styles.active : ''}>
-                Login 
+                Entrar 
                 </NavLink>
             </li>
             <li>
