@@ -1,6 +1,7 @@
 import styles from './Registro.module.css'
 
 import {useState, useEffect} from 'react'
+import { useAuthentication } from '../../hooks/useAuthentication'
 
 const Registro = () => {
   const [displayName, setDisplayName] = useState("")
@@ -8,8 +9,10 @@ const Registro = () => {
   const [password, setPassword] = useState ("")
   const [confirmPassword, setConfirmPassword] = useState("")
   const [error, setError] = useState("")
+
+  const {createUser, error: authError, loading} = useAuthentication();
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
 
     setError("")
@@ -25,8 +28,16 @@ const Registro = () => {
       return;
     }
 
-    console.log(user);
-  }
+    const res = await createUser(user)
+
+    console.log(res);
+  };
+
+  useEffect(() => {
+    if (authError) {
+      setError(authError);
+    }
+  }, [authError]);
 
 
   return (
@@ -70,11 +81,12 @@ const Registro = () => {
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}/>
           </label>
-          <button className='btn'>Cadastrar</button>
+          {!loading && <button className='btn'>Cadastrar</button>}
+          {loading && <button className='btn' disabled>Aguarde...</button>}
           {error && <p className='error'>{error}</p>}
         </form>
     </div>
   )
 }
 
-export default Registro
+export default Registro;
