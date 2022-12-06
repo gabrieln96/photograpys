@@ -41,7 +41,7 @@ form {
 label {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1px;
+  margin-bottom: 1em;
 }
 
 label span {
@@ -60,8 +60,8 @@ textarea {
 }
 
 .btn {
-  background-color: #1a8918;
-  color: #000;
+  background-color: #251749;
+  color: #FFF;
   text-align: center;
   cursor: pointer;
   border-radius: 10px;
@@ -86,7 +86,7 @@ textarea {
 }
 
 .btn:hover {
-  background-color: #0f730c;
+  background-color: #263159;
   color: #fff;
 }
 

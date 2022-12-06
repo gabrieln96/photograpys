@@ -1,6 +1,6 @@
 .navbar {
     display: flex;
-    box-shadow: rgba(0,0,0, .15) 0px -2px 10px 0px;
+    box-shadow: rgba(38,49,89, .15) 0px -2px 10px 0px;
     justify-content: space-between;
     align-items: center;
     padding: .5em 2em;
@@ -29,6 +29,6 @@
 }
 
 .active {
-    background-color: #000;
+    background-color: #251749;
     color: #fff;
 }
