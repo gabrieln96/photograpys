@@ -1,6 +1,10 @@
 import './App.css';
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 
+//context
+
+import { AuthProvider } from './context/AuthContext';
+
 
 //pages
 import Home from './pages/Home/Home';
@@ -13,18 +17,20 @@ import Registro from './pages/registro/Registro';
 function App() {
   return (
     <div className="App">
+    <AuthProvider>
       <BrowserRouter>
-        <Navbar/>
-        <div className="container">
-          <Routes>
-            <Route path='/' element={<Home/>} />
-            <Route path='/about' element={<About/>} />
-            <Route path='/login' element={<Login/>} />
-            <Route path='/registro' element={<Registro/>} />
-          </Routes>
-        </div>
-        <Footer/>
-      </BrowserRouter>
+          <Navbar/>
+          <div className="container">
+            <Routes>
+              <Route path='/' element={<Home/>} />
+              <Route path='/about' element={<About/>} />
+              <Route path='/login' element={<Login/>} />
+              <Route path='/registro' element={<Registro/>} />
+            </Routes>
+          </div>
+          <Footer/>
+        </BrowserRouter>
+    </AuthProvider>
     </div>
   );
 }
