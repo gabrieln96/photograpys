@@ -48,10 +48,10 @@ function App() {
             <Routes>
               <Route path='/' element={<Home/>} />
               <Route path='/about' element={<About/>} />
-              <Route path='/login' element={<Login/>} />
-              <Route path='/registro' element={<Registro/>} />
-              <Route path='/posts/create' element={<CreatePost/>} />
-              <Route path='/dashboard' element={<Dashboard/>} />
+              <Route path='/login' element={!user ? <Login/> : <Navigate to ="/" />} />
+              <Route path='/registro' element={!user ? <Registro/> : <Navigate to ="/" />} />
+              <Route path='/posts/create' element={user ? <CreatePost/> : <Navigate to ="/login" />} />
+              <Route path='/dashboard' element={user ? <Dashboard/> : <Navigate to ="/login" />} />
             </Routes>
           </div>
           <Footer/>
