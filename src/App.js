@@ -52,6 +52,7 @@ function App() {
               <Route path='/registro' element={!user ? <Registro/> : <Navigate to ="/" />} />
               <Route path='/posts/create' element={user ? <CreatePost/> : <Navigate to ="/login" />} />
               <Route path='/dashboard' element={user ? <Dashboard/> : <Navigate to ="/login" />} />
+              
             </Routes>
           </div>
           <Footer/>
