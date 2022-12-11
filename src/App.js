@@ -20,6 +20,7 @@ import Registro from './pages/registro/Registro';
 import CreatePost from './pages/CreatePost/CreatePost';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Search from './Search/Search';
+import Post from './pages/post/Post';
 
 function App() {
 
@@ -50,6 +51,7 @@ function App() {
               <Route path='/' element={<Home/>} />
               <Route path='/about' element={<About/>} />
               <Route path='/search' element={<Search/>} />
+              <Route path='/posts/:id' element={<Post/>}/>
               <Route path='/login' element={!user ? <Login/> : <Navigate to ="/" />} />
               <Route path='/registro' element={!user ? <Registro/> : <Navigate to ="/" />} />
               <Route path='/posts/create' element={user ? <CreatePost/> : <Navigate to ="/login" />} />
